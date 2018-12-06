@@ -1,10 +1,18 @@
+const helpers = require('./winner-helpers')
+
 class Game {
   constructor(board) {
     this.board = board
     this.nextPlayerX = true
+    this.winningMoves = helpers.winningMoves
   }
 
-  calculateWinner() {}
+  calculateWinner() {
+    for (let i = 0; i < this.winningMoves.length; i++) {
+      let combination = this.winningMoves[i]
+      return helpers.isWinningCombination(this.board.squares, combination)
+    }
+  }
 
   addMove(squareNumber) {
     if (this.nextPlayerX === true) {
