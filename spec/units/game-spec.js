@@ -52,5 +52,20 @@ describe('Game', () => {
       board.squares = [null, 'O', null, null, 'O', null, null, 'O', null]
       expect(game.calculateWinner()).toEqual('O')
     })
+
+    it('should be X when 0, 4, and 8 are filled with X', () => {
+      board.squares = ['X', null, null, null, 'X', null, null, null, 'X']
+      expect(game.calculateWinner()).toEqual('X')
+    })
+
+    it('should be O when 2, 4, and 6 are filled with O', () => {
+      board.squares = [null, null, 'O', null, 'O', null, 'O', null, null]
+      expect(game.calculateWinner()).toEqual('O')
+    })
+
+    it('is undefined when board is filled with non-winning combos', () => {
+      board.squares = ['X', 'O', 'X', 'X', 'O', 'O', 'O', 'X', 'X']
+      expect(game.calculateWinner()).toEqual()
+    })
   })
 })

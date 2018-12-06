@@ -8,7 +8,6 @@ describe('Features', () => {
 
   describe('Playing a game', () => {
     xit('results in a win for X when 0, 1, and 2 are filled with X', () => {
-      game.initialize()
       game.addMove(0)
       game.addMove(3)
       game.addMove(1)
