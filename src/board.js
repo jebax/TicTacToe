@@ -1,5 +1,5 @@
 class Board {
-  constructor() {
+  constructor () {
     this.squares = [
       null, null, null,
       null, null, null,
@@ -7,7 +7,7 @@ class Board {
     ]
   }
 
-  setSquareValue(squareNumber, player) {
+  setSquareValue (squareNumber, player) {
     this.squares[squareNumber] = player
   }
 }

@@ -15,7 +15,7 @@ const isWinningCombination = (squares, combination) => {
   let z = combination[2]
 
   if (squares[x] && squares[x] === squares[y] && squares[y] === squares[z]) {
-    winningPlayer = squares[x]
+    const winningPlayer = squares[x]
     return winningPlayer
   }
 }
