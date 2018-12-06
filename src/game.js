@@ -17,9 +17,9 @@ class Game {
 
   makeMove(squareNumber) {
     if (this.nextPlayerX === true) {
-      this.board.squares[squareNumber] = 'X'
+      this.board.setSquareValue(squareNumber, 'X')
     } else {
-      this.board.squares[squareNumber] = 'O'
+      this.board.setSquareValue(squareNumber, 'O')
     }
     this.switchPlayer()
   }

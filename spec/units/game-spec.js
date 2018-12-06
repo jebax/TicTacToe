@@ -4,7 +4,7 @@ describe('Game', () => {
   var board
 
   beforeEach(() => {
-    board = jasmine.createSpy('board')
+    board = jasmine.createSpyObj('board', ['setSquareValue'])
     board.squares = [null, null, null, null, null, null, null, null, null]
     game = new Game(board)
   })
@@ -27,18 +27,20 @@ describe('Game', () => {
       expect(game.nextPlayerX).toBe(false)
     })
 
-    it("can add a move to update its board's squares", () => {
-      square = 0
-      game.makeMove(square)
-      expect(game.board.squares[square]).toEqual('X')
+    it("can add a move to update its board's squares with X", () => {
+      game.makeMove(0)
+      expect(game.board.setSquareValue).toHaveBeenCalledWith(0, 'X')
     })
 
-    it("adds two moves and the second move's squares is O", () => {
-      square1 = 0
-      square2 = 1
-      game.makeMove(square1)
-      game.makeMove(square2)
-      expect(game.board.squares[square2]).toEqual('O')
+    it("can add a second move to update it board's squares with O", () => {
+      game.makeMove(0)
+      game.makeMove(0)
+      expect(game.board.setSquareValue).toHaveBeenCalledWith(0, 'O')
+    })
+
+    it("switches a player when it makes a move", () => {
+      game.makeMove(0)
+      expect(game.nextPlayerX).toBe(false)
     })
   })
 
