@@ -1,13 +1,14 @@
 describe('Features', () => {
-  var Game = require ('../../src/game')
+  var Game = require('../../src/game')
+  var boardExports = require('../../src/board')
   var game
 
   beforeEach(() => {
-    game = new Game()
+    game = new Game(new boardExports.Board())
   })
 
   describe('Playing a game', () => {
-    xit('results in a win for X when 0, 1, and 2 are filled with X', () => {
+    it('results in a win for X when 0, 1, and 2 are filled with X', () => {
       game.addMove(0)
       game.addMove(3)
       game.addMove(1)

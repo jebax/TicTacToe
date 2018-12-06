@@ -16,5 +16,10 @@ describe('Board', () => {
       board.setSquareValue(4, 'X')
       expect(board.squares[4]).toEqual('X')
     })
+
+    it('can change a specified square to have O as its value', () => {
+      board.setSquareValue(5, 'O')
+      expect(board.squares[5]).toEqual('O')
+    })
   })
 })
