@@ -9,11 +9,11 @@ describe('Features', () => {
 
   describe('Playing a game', () => {
     it('results in a win for X when 0, 1, and 2 are filled with X', () => {
-      game.addMove(0)
-      game.addMove(3)
-      game.addMove(1)
-      game.addMove(6)
-      game.addMove(2)
+      game.makeMove(0)
+      game.makeMove(3)
+      game.makeMove(1)
+      game.makeMove(6)
+      game.makeMove(2)
       expect(game.calculateWinner()).toEqual('X')
     })
   })

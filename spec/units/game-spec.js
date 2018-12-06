@@ -29,15 +29,15 @@ describe('Game', () => {
 
     it("can add a move to update its board's squares", () => {
       square = 0
-      game.addMove(square)
+      game.makeMove(square)
       expect(game.board.squares[square]).toEqual('X')
     })
 
     it("adds two moves and the second move's squares is O", () => {
       square1 = 0
       square2 = 1
-      game.addMove(square1)
-      game.addMove(square2)
+      game.makeMove(square1)
+      game.makeMove(square2)
       expect(game.board.squares[square2]).toEqual('O')
     })
   })

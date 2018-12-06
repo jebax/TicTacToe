@@ -15,7 +15,7 @@ class Game {
     }
   }
 
-  addMove(squareNumber) {
+  makeMove(squareNumber) {
     if (this.nextPlayerX === true) {
       this.board.squares[squareNumber] = 'X'
     } else {
