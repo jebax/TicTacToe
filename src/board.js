@@ -6,6 +6,10 @@ class Board {
       null, null, null
     ]
   }
+
+  setSquareValue(squareNumber, player) {
+    this.squares[squareNumber] = player
+  }
 }
 
 module.exports = { Board }
