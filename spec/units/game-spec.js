@@ -23,7 +23,7 @@ describe('Game', () => {
     })
 
     it('can switch players', () => {
-      game.switchMove()
+      game.switchPlayer()
       expect(game.nextPlayerX).toBe(false)
     })
 
@@ -31,6 +31,14 @@ describe('Game', () => {
       square = 0
       game.addMove(square)
       expect(game.board.squares[square]).toEqual('X')
+    })
+
+    it("adds two moves and the second move's squares is O", () => {
+      square1 = 0
+      square2 = 1
+      game.addMove(square1)
+      game.addMove(square2)
+      expect(game.board.squares[square2]).toEqual('O')
     })
   })
 })

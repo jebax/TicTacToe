@@ -7,10 +7,15 @@ class Game {
   calculateWinner() {}
 
   addMove(squareNumber) {
-    this.board.squares[squareNumber] = 'X'
+    if (this.nextPlayerX === true) {
+      this.board.squares[squareNumber] = 'X'
+    } else {
+      this.board.squares[squareNumber] = 'O'
+    }
+    this.switchPlayer()
   }
 
-  switchMove() {
+  switchPlayer() {
     if (this.nextPlayerX) {
       this.nextPlayerX = false
     } else {
