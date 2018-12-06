@@ -17,5 +17,9 @@ describe('Game', () => {
     it('does not have a winner when it starts', () => {
       expect(game.calculateWinner()).toEqual()
     })
+
+    it('starts with X as the next move', () => {
+      expect(game.nextMoveX).toBe(true)
+    })
   })
 })
