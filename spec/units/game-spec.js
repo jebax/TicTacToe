@@ -26,5 +26,11 @@ describe('Game', () => {
       game.switchMove()
       expect(game.nextPlayerX).toBe(false)
     })
+
+    it("can add a move to update its board's squares", () => {
+      square = 0
+      game.addMove(square)
+      expect(game.board.squares[square]).toEqual('X')
+    })
   })
 })
