@@ -18,8 +18,13 @@ describe('Game', () => {
       expect(game.calculateWinner()).toEqual()
     })
 
-    it('starts with X as the next move', () => {
-      expect(game.nextMoveX).toBe(true)
+    it('starts with X as the next player', () => {
+      expect(game.nextPlayerX).toBe(true)
+    })
+
+    it('can switch players', () => {
+      game.switchMove()
+      expect(game.nextPlayerX).toBe(false)
     })
   })
 })
