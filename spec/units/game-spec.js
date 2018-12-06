@@ -41,4 +41,11 @@ describe('Game', () => {
       expect(game.board.squares[square2]).toEqual('O')
     })
   })
+
+  describe("A game's winner", () => {
+    it('should be X when 0, 1, and 2 are filled with X', () => {
+      board.squares = ['X', 'X', 'X', null, null, null, null, null, null]
+      expect(game.calculateWinner()).toEqual('X')
+    })
+  })
 })
