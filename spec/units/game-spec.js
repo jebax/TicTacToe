@@ -13,5 +13,9 @@ describe('Game', () => {
     it('starts with an empty board', () => {
       expect(game.board.squares).toEqual(board.squares)
     })
+
+    it('does not have a winner when it starts', () => {
+      expect(game.calculateWinner()).toEqual()
+    })
   })
 })
