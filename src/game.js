@@ -10,7 +10,8 @@ class Game {
   calculateWinner() {
     for (let i = 0; i < this.winningMoves.length; i++) {
       let combination = this.winningMoves[i]
-      return helpers.isWinningCombination(this.board.squares, combination)
+      let result = helpers.isWinningCombination(this.board.squares, combination)
+      if (result) { return result }
     }
   }
 
