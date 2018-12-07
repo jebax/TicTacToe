@@ -1,9 +1,9 @@
 describe('Board', () => {
-  var boardExports = require('../../src/board')
+  var Board = require('../../src/board')
   var board
 
   beforeEach(() => {
-    board = new boardExports.Board()
+    board = new Board()
   })
 
   describe('A tic tac toe board', () => {

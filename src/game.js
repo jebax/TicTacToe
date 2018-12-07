@@ -7,14 +7,6 @@ class Game {
     this.winningMoves = helpers.winningMoves
   }
 
-  calculateWinner () {
-    for (let i = 0; i < this.winningMoves.length; i++) {
-      let combination = this.winningMoves[i]
-      let result = helpers.isWinningCombination(this.board.squares, combination)
-      if (result) { return result }
-    }
-  }
-
   makeMove (squareNumber) {
     if (this.nextPlayerX === true) {
       this.board.setSquareValue(squareNumber, 'X')
@@ -29,6 +21,14 @@ class Game {
       this.nextPlayerX = false
     } else {
       this.nextPlayerX = true
+    }
+  }
+
+  calculateWinner () {
+    for (let i = 0; i < this.winningMoves.length; i++) {
+      const combination = this.winningMoves[i]
+      const result = helpers.isWinningCombination(this.board.squares, combination)
+      if (result) { return result }
     }
   }
 }

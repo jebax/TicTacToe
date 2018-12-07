@@ -10,9 +10,9 @@ const winningMoves = [
 ]
 
 const isWinningCombination = (squares, combination) => {
-  let x = combination[0]
-  let y = combination[1]
-  let z = combination[2]
+  const x = combination[0]
+  const y = combination[1]
+  const z = combination[2]
 
   if (squares[x] && squares[x] === squares[y] && squares[y] === squares[z]) {
     const winningPlayer = squares[x]

@@ -1,10 +1,10 @@
 describe('Features', () => {
   var Game = require('../../src/game')
-  var boardExports = require('../../src/board')
+  var Board = require('../../src/board')
   var game
 
   beforeEach(() => {
-    game = new Game(new boardExports.Board())
+    game = new Game(new Board())
   })
 
   describe('Playing a game', () => {
